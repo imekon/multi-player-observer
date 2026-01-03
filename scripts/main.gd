@@ -12,9 +12,13 @@ func _ready() -> void:
 	multiplayer.multiplayer_peer = peer
 
 @rpc()
-func rock_status(_id, _x, _y):
+func rock_status(_id, _x, _y, _angle):
 	var rock = Rock.new(_id, _x, _y)
 	rocks[_id] = rock
+	
+@rpc()
+func create_player(_name):
+	pass
 	
 @rpc()
 func player_status(_id, _x, _y):
